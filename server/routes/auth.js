@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken")
 const auth = require("../middleware/auth")
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;
-    //console.log(req.body)
     if (!email || !password) return res.status(400).json({ error: "all fields required" })
     try {
         const doesUserExist = await User.findOne({ email })
@@ -15,7 +14,6 @@ router.post("/login", async (req, res) => {
         const payload = { _id: doesUserExist._id }
         const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" })
         const user = { ...doesUserExist._doc, password: undefined }
-        //console.log(user)
         return res.status(201).json({ token, user })
     } catch (err) {
         console.log(err)
