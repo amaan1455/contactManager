@@ -35,15 +35,15 @@ const CreateContact = () => {
         <form onSubmit={handleSubmit}>
             <div class="form-group">
                 <label for="nameInput" class="form-label mt-4">Name</label>
-                <input type="text" class="form-control" id="nameInput" value={info.name || "name"} onChange={handleCh} name="name" placeholder="Enter name" />
+                <input type="text" class="form-control" id="nameInput" value={info.name} onChange={handleCh} name="name" placeholder="Enter name" />
             </div>
             <div class="form-group">
                 <label for="emailInput" class="form-label mt-4">Email address</label>
-                <input type="email" class="form-control" id="emailInput" value={info.email || "mail1@mail.com"} onChange={handleCh} name="email" placeholder="Enter email" />
+                <input type="email" class="form-control" id="emailInput" value={info.email} onChange={handleCh} name="email" placeholder="Enter email" />
             </div>
             <div class="form-group">
                 <label for="phoneInput" class="form-label mt-4">Phone</label>
-                <input type="text" class="form-control" id="phoneInput" value={info.phone || "123456789"} onChange={handleCh} name="phone" placeholder="Enter phone" />
+                <input type="text" class="form-control" id="phoneInput" value={info.phone} onChange={handleCh} name="phone" placeholder="Enter phone" />
             </div>
             <button type="submit" class="btn btn-primary mt-5">Add</button>
             <div class="form-group">
